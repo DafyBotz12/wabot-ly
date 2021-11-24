@@ -47,9 +47,14 @@ const defaultMenu = {
 │ Uptime: *%uptime (%muptime)*
 │ Database: %rtotalreg of %totalreg
 │ Github :
-│ https://github.com/LitRHap/wabot
+│ https://github.com/DafyBotz12/wabot
 │ Instagram :
-│ https://instagram.com/loli._.school
+│ https://instagram.com/raaihankhadafi8
+│Join My Grub Please Ootd Oky
+│https://chat.whatsapp.com/DDBpEGASOb1KIcM0gRW59e
+│ᴊᴏɪɴ ɢʀᴜʙ ɴᴀɴᴛɪ ᴅᴀᴘᴇᴛ ᴘʀᴇᴍɪᴜᴍ ᴊᴀᴅɪ sɪᴅᴇʀ ᴜɴᴘʀᴇᴍɪᴜᴍ
+│©ᴅᴀғʏ ɴɪʜ ʙᴀɴɢ
+│kalo risih kick aja bot nya
 ╰────
 %readmore`.trimStart(),
   header: '┏┉┄┈┈┈『%category』┈┈┈┈┈┉┓',
@@ -171,8 +176,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         }
     }
 }
-let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `Relldev`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN: Rlxfly UwU\nitem1.TEL;waid=6283820073017:6283820073017\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-conn.send3ButtonImg(m.chat, thumb, `Hi! Im ${conn.user.name}\n\nHere my menu...`, text.trim(), 'ping', '.ping', 'owner', '-owner', 'donasi', '.donasi', reply)
+let bb = await conn.prepareMessage('0@s.whatsapp.net', thumb, 'documentMessage', { mimetype: 'application/pdf', thumbnail: thumb })
+let cc = await conn.prepareMessageFromContent(m.chat, { buttonsMessage: { contentText: `Hi! Im ${conn.user.name}\n\nHere my menu...`, footerText: text.trim(), buttons: [{ buttonId: `${_p}ping`, buttonText: { displayText: `ping` }, type: 1 }, { buttonId: `${_p}owner`, buttonText: { displayText: `owner` }, type: 1 }, { buttonId: `${_p}donasi`, buttonText: { displayText: `donasi` }, type: 1 }], headerType: 'DOCUMENT', documentMessage: { url: bb.message.documentMessage.url, mimetype: bb.message.documentMessage.mimetype, title: bb.message.documentMessage.title, fileSha256: bb.message.documentMessage.fileSha256, fileLength: '999999999', pageCount: '100', mediaKey: bb.message.documentMessage.mediaKey, fileName: conn.user.name, fileEncSha256: bb.message.documentMessage.fileEncSha256, directPath: bb.message.documentMessage.directPath, jpegThumbnail: bb.message.documentMessage.jpegThumbnail }}}, { quoted: m, contextInfo: { externalAdReply: { title: 'ᴅᴀғʏ乂ɴᴇʀɪɴᴀ乂ᴠᴀʟᴇɴ', body: 'ɪɴɪ ʙᴜᴀᴛᴀɴ ᴅᴀғʏ', mediaType: 2, thumbnail: thumb, mediaUrl: 'https://instagram.com/raaihankhadafi8' }}})
+conn.relayWAMessage(cc)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -192,7 +198,6 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 3
-
 
 module.exports = handler
 
